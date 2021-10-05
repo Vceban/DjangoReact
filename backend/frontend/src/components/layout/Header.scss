@@ -1,0 +1,53 @@
+.header-bottom{
+  height: 180px;
+  padding-top: 17px;
+  //background: #2aabd2;
+  position: relative;
+  z-index: 15;
+  background-image: url("../../../media/download.jpeg");
+  /*box-shadow: 0 7px 8px 0 rgb(0 0 0 );*/
+  .container {
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    .header-content {
+      position: relative;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      .item {
+        margin-left: 700px;
+        border: #4cae4c;
+        button{
+          .logoutbtn{
+          }
+        }
+        button{
+          .signupbut{
+          }
+        }
+      }
+      .item1 {
+        margin-top: 50px;
+        margin-left: 100px;
+        button{
+          .loginbut{
+            height: 500px;
+            margin-left: 600px;
+            text-align: center;
+            padding: 15px;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
