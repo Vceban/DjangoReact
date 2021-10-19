@@ -1,17 +1,12 @@
 import React, {Component} from 'react'
 import { 
-  Button, 
-  Container, 
-  Dimmer, 
+  Button,
   Icon, 
-  Image, 
-  Item, 
-  Label, 
-  Loader,
-  Message, 
-  Segment,
+  Image,
+  Label,
    } from 'semantic-ui-react'
 import axios from 'axios';
+import './ProductList.scss'
 
 class ProductList extends Component {
 
@@ -36,48 +31,43 @@ class ProductList extends Component {
   render() {
     const {data, error, loading} = this.state;
     return (
-        <Container>
-            {error && (
-                <Message
-                    error
-                    header='There was some errors with your submission'
-                    content={JSON.stringify(error)}
-                />
-            )}
-            {loading &&  (
-                <Segment>
-                    <Dimmer active inverted>
-                        <Loader inverted>Loading</Loader>
-                    </Dimmer>
-                </Segment>)}
-        <Item.Group divided>
+        <div className= "container">
+        <div className="divided-items">
             {data.map(item => {
                 return (
                     <div key={item.id}>
-                    <Item.Content>
-                        <Item.Header as='a'>{item.title}</Item.Header>
-                        <Item.Meta>
+                    <div className="imgcontent">
+                        <img src={item.image}/>
+                    </div>
+                    <div className="content">
+                        <div className="header" as='a'>{item.title}</div>
+                        <div className="meta">
                             <span className='cinema'>{item.category}</span>
-                        </Item.Meta>
-                        <Item.Description>{item.description}</Item.Description>
-                        <Item.Extra>
+                        </div>
+                        <div className="price-label">{item.price}
+                        <br/>
+                            1
                             <Button primary floated='right' icon labelPosition="right">
                                 Add to cart
                                 <Icon name='cart plus' />
                             </Button>
+                        </div>
+                        <div className="description">{item.description}</div>
+                        <div className="extra">
+
                             {item.discount_price && <Label color={item.label === "primary"
                                 ? "blue"
                                 : item.label === "secondary"
                                     ? "green"
                                     : "yellow"}>{item.label}</Label>}
-                        </Item.Extra>
-                    </Item.Content>
+                        </div>
+                    </div>
                 </div>
                 )
             })}
 
-      </Item.Group>
-  </Container>
+      </div>
+  </div >
     );
   }
 } export default ProductList

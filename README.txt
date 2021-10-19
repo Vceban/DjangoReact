@@ -1,3 +1,13 @@
 pip3 install django djangorestframework django-rest-knox
 django-admin startproject backend
-when i try to send any request using my postman agent nothing happens, pressing the submit button a download circle appears but the request is not sent
+
+
+===
+
+npm install -D webpack webpack-cli
+npm install -D @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-propreties
+npm install react react-dom prop-types
+npm install redux react-redux redux-thunk redux-devtools-extension
+
+===
+
